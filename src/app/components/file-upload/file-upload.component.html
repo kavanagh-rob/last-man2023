@@ -1,0 +1,18 @@
+<ngx-spinner [fullScreen]="false" type="ball-scale-ripple-multiple">
+    <h5 style="color: white"> Uploading... </h5>
+</ngx-spinner>
+
+<label class="btn btn-default">
+    <input type="file" (change)="selectFile($event)">
+</label>
+  
+<div [hidden]="!showError" class="text-danger">
+    <br>
+    <h3>{{errorMessage}}</h3>
+</div>   
+
+<div [hidden]="!showSuccess" class="text-success">
+    <br>
+    <h3>File Uploaded Successfully</h3>
+</div>   
+<button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>

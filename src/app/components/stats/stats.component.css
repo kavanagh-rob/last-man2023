@@ -1,0 +1,27 @@
+:host {         
+    display: block;
+    width: 100%;      
+}
+
+th,
+td {
+    text-align: center;
+}
+
+.count-label {
+    vertical-align: middle;
+}
+
+.teamIcon{
+    height:50px !important;
+    width:50px !important;
+}
+
+
+@media screen and (max-width: 767px) {
+
+    img {
+        width: 2.5em
+    }
+
+}

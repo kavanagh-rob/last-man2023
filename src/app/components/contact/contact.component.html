@@ -1,0 +1,33 @@
+<br/>
+<h4  class="text-center">Contact Us</h4>
+
+<h5 class="text-center">Contact Number:  0879148755</h5>
+<h5 class="text-center">Email: <a href="mailto:stjameslastmanstanding@gmail.com?subject=Last Jimmy Standing Enquiry!">stjameslastmanstanding@gmail.com</a></h5>
+
+<h3>Enquiry Form</h3>
+
+<br/>
+<form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <h5><label for="nameInput">Enter Name</label></h5>
+            <input [(ngModel)]="userInfo.name" type="text" class="form-control" id="nameInput" name="nameInput" placeholder="Enter Name">
+        </div>
+        <div class="form-group">
+                <h5><label for="emailInput">Email address</label></h5>
+            <input [(ngModel)]="userInfo.email" type="email" class="form-control" id="nameInput" name="nameInput" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <h5><label for="nameInput">Enter Phone Number</label></h5>
+            <input [(ngModel)]="userInfo.phone" type="text" class="form-control" id="phoneInput" name="phoneInput" placeholder="Enter Phone Number">
+        </div>
+
+        <div class="form-group">
+                <h5><label for="commentInput">Enter (Optional) Comment</label></h5>
+                <input [(ngModel)]="userInfo.comment" type="text" class="form-control" id="commentInput" name="commentInput" placeholder="Enter Comment">
+            </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+        
+
+         

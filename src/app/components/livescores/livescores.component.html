@@ -1,0 +1,30 @@
+<div *ngIf="liveGamesList.length > 0">
+    <h3 class="heading text-center">Live Scores</h3>
+    <table class="table hoverTable gameweek-table">
+        <thead>
+            <tr>
+                <th colspan="2" scope="col">Time</th>
+                <th></th>
+                <th colspan="2" scope="col">Home</th>
+                <th scope="col"></th>
+                <th colspan="2" scope="col">Away</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let liveMatch of liveGamesList" [ngClass]="{'blink': !isNotLiveMatch(liveMatch) }">
+                <td colspan="2">{{liveMatch['liveTime']}}</td>
+                <td><img [src]="getLiveTeamLogo(liveMatch['teamA'])"></td>
+                <td colspan="2">{{liveMatch['teamA']}}</td>
+                <td class="score">{{liveMatch['score']}}</td>   
+                <td colspan="2">{{liveMatch['teamB']}}</td> 
+                <td><img [src]="getLiveTeamLogo(liveMatch['teamB'])"></td>
+                <td></td>
+            </tr>
+        </tbody>
+</table>
+</div>
+
+
+

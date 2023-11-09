@@ -1,0 +1,26 @@
+.image-wrapper{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.fb_icon{
+    height:45px !important;
+    width:45px !important;
+}
+@media screen and (max-width: 767px) {
+    .fb_icon{
+        height:22px !important;
+        width:22px !important;
+    }
+
+    .responsive-image{
+        width: 100%;
+        height: auto;
+    }
+
+    .image-wrapper{
+        margin-top: 0px;
+    }
+}
+

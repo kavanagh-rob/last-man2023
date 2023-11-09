@@ -1,0 +1,51 @@
+
+<br/>
+<div>
+    <div >
+        <ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple">
+            <h5 style="color: white"> Loading Matches... </h5>
+        </ngx-spinner>
+    </div>
+
+    <app-livescores *ngIf="eventinfo.showLiveScores" ></app-livescores>
+    <h4 class="heading text-center"><strong>Round {{getCurrentRound()}}</strong> (Gameweek {{currentRound.round}})</h4>
+    <!-- <h3 class="heading text-center">Deadline : {{deadline}} </h3> -->
+    <h3 class="heading text-center">Deadline : {{eventinfo.nextDeadline}} </h3>
+    <table class="table hoverTable gameweek-table">
+        <thead>
+            <tr>
+                <th colspan="2" scope="col">Date</th>
+                <th></th>
+                <th colspan="2" scope="col">Home</th>
+                <th scope="col"></th>
+                <th colspan="2" scope="col">Away</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let match of currentRound.matches;">
+                <td colspan="2">{{getDateTime(match['matchDateTime'])}}</td>
+                <td><img class="teamIcon" [src]="getTeamLogo(match['contestants'][0])"></td>
+                <td colspan="2">{{getTeamName(match['contestants'][0])}}</td>
+                <td>VS</td>   
+                <td colspan="2">{{getTeamName(match['contestants'][1])}}</td> 
+                <td><img class="teamIcon" [src]="getTeamLogo(match['contestants'][1])"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- <div id="container">
+    <iframe id="embed" (Load)="formatFrame()" src="https://www.premierleague.com/tables"></iframe>
+</div> -->
+
+<!-- <div class="formContainer">
+    <h3 class="text-center heading" style="color: indigo"> Form Guide </h3>
+    <img class="form-image" src="https://last-man-input.s3-eu-west-1.amazonaws.com/img/form_small.png" 
+        srcset="https://last-man-input.s3-eu-west-1.amazonaws.com/img/form_small.png 1000w, https://last-man-input.s3-eu-west-1.amazonaws.com/img/form_large.png 2000w" alt="yah">
+ </div> -->
+    
+    

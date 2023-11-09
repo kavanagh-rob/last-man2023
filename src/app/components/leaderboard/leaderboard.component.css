@@ -1,0 +1,112 @@
+:host {         
+    display: block;
+    width: 100%;      
+}
+
+.remainingPlayersText{
+    color: limegreen;
+    white-space:nowrap;
+}
+
+.teamIcon{
+    height:50px !important;
+    width:50px !important;
+}
+
+th,
+td {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.winningPick {
+    background-color: limegreen;
+}
+
+.drawingLosePick{
+    background-color: orange;
+}
+
+
+.losingPick {
+    background-color: lightcoral;
+}
+
+.player-heading,
+.round-heading
+.text-label{
+    font-size: 1.3em;
+}
+
+.player-heading {
+    color: blue;
+}
+.round-heading {
+    color: crimson;
+}
+
+#wrapper{
+    position:relative;
+}
+
+
+@media screen and (max-width: 767px) {
+    img {
+        height: 14px;
+    }
+
+    .teamIcon{
+        height:14px !important;
+        width:14px !important;
+    }
+
+    td{
+        font-size: 0.45em;
+        padding: 8px;
+        max-height: 112px;
+    }
+
+    th{
+        padding: 8px;
+        font-size:0.45em;
+    }
+
+    .player-label {
+     font-size: 0.5em;
+     height: 100%;
+     max-height: 40px;
+    }
+
+    .player-heading {
+        top: 0;
+        font-size:0.6em;
+    }
+    .round-heading {
+        font-size: 0.6em;
+        min-width: 56px;
+    }
+
+    #table-content { 
+        overflow-x: auto; 
+        margin-left: 80px;
+        overflow-y: visible;
+        padding: 0;
+    } 
+
+    .player-heading,
+    .player-label {
+        position: absolute;
+        width: 80px;
+        left: 0;
+    }
+  
+    table {
+        max-width: 100%;
+        /* table-layout:fixed; */
+    }
+
+    .heading {
+        font-size: 0.75em;
+    }
+
+}

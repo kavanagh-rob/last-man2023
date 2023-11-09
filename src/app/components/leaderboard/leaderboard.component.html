@@ -1,0 +1,29 @@
+<br/>
+<h4 class="text-center">Player Table</h4>
+<h5 class="text-center">Total players {{playerList.length}} <span class="remainingPlayersText">(Remaining {{remainingPlayers.length}})</span></h5>
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Search Name" [(ngModel)]="term">
+</div>
+<ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple">
+    <h5 style="color: white"> Loading Players... </h5>
+</ngx-spinner>
+
+<div id="wrapper">
+<div id="table-content" #tableScroll> 
+    <table class="table hoverTable">
+        <thead>
+            <tr>
+                <th class="player-heading" scope="col">Player</th>
+                <th class="round-heading" scope="col" *ngFor="let weekIndex of eventinfo.weeks;let i = index">Round {{getRoundNumber(weekIndex)}}</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr [style.background-color]="getActiveColor(player)" *ngFor="let player of sortPlayerByName(playerList) | filter:term;">
+                <!-- <tr [style.background-color]="getActiveColor(player)" *ngFor="let player of sortPlayerByName(playerList)">     -->
+                <td [style.background-color]="getActiveColor(player)" class="player-label"><strong>{{player.name}}</strong></td>
+                <td  *ngFor="let weekIndex of eventinfo.weeks"  [ngClass]="getResultClass(player, weekIndex)"><img class="teamIcon" [src]="getTeamLogo(player, weekIndex)"><div>{{getPlayerPick(player, weekIndex)}}</div></td>   
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

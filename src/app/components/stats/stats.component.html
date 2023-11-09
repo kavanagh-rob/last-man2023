@@ -1,0 +1,23 @@
+<br/>
+<h4 class="text-center">Round {{getCurrentRound()}} Stats</h4>
+<h5 class="text-center"> <span [style.color]="'limegreen'">Starting players {{playerCountForWeek}}</span></h5>
+<h5 class="text-center"> <span [style.color]="'red'">Eliminated players {{eliminatedPlayerCount}}</span></h5>
+
+
+<h4 class="text-center" [style.color]="'indigo'" >Most Selected Teams</h4>
+<table class="table hoverTable">
+    <thead>
+        <tr>
+            <th class="player-heading" scope="col">Team</th>
+            <th class="round-heading" scope="col">Selections</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr [style.background-color]="getActiveColor(selection)" *ngFor="let selection of sortTeamByCount(selectionList)">
+            <td class="text-label">
+                <div><img class="teamIcon" [src]="getTeamLogo(selection.team)"></div> 
+                <div><strong>{{selection.team}}</strong></div></td>
+            <td class="count-label"><div><strong>{{selection.count}}</strong></div></td>
+        </tr>
+    </tbody>
+</table>
