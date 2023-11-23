@@ -19,7 +19,7 @@ export class GameweekComponent implements OnInit {
 
   }
   currentRound = {matches: [], round: ''};
-  eventinfo = {nextDeadline: '', currentWeek: '', startWeek: '', showLiveScores: false, showForm: false};
+  eventinfo = {nextDeadline: '', currentWeek: '', startWeek: '', showLiveScores: false, showForm: false, teamList: []};
   gameweekObservable;
   eventObservable;
   teams;

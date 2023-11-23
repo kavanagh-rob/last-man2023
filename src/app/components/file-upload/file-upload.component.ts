@@ -38,8 +38,7 @@ export class FileUploadComponent implements OnInit {
       }
       const managedUpload = this.uploadService.uploadFile(file, accDetails)
       const isUploadSuccess = !managedUpload['failed'];
-      console.log(isUploadSuccess);
-
+  
       if(isUploadSuccess){
         this.showSuccess = true;
       }

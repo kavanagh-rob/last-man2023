@@ -21,7 +21,7 @@
                 <tr [style.background-color]="getActiveColor(player)" *ngFor="let player of sortPlayerByName(playerList) | filter:term;">
                 <!-- <tr [style.background-color]="getActiveColor(player)" *ngFor="let player of sortPlayerByName(playerList)">     -->
                 <td [style.background-color]="getActiveColor(player)" class="player-label"><strong>{{player.name}}</strong></td>
-                <td  *ngFor="let weekIndex of eventinfo.weeks"  [ngClass]="getResultClass(player, weekIndex)"><img class="teamIcon" [src]="getTeamLogo(player, weekIndex)"><div>{{getPlayerPick(player, weekIndex)}}</div></td>   
+                <td  *ngFor="let weekIndex of eventinfo.weeks"  [ngClass]="getResultClass(player, weekIndex)"><img class="teamIcon" [hidden]="isWeekLogoVisible(player, weekIndex)" [src]="getTeamLogo(player, weekIndex)"><div>{{getPlayerPick(player, weekIndex)}}</div></td>   
             </tr>
         </tbody>
     </table>

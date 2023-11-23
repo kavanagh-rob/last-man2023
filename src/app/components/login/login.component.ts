@@ -23,6 +23,6 @@ export class LoginComponent implements OnInit {
   login() {
     if(this.username.trim() === 'admin' && btoa(this.password.trim()) === environment.id)
       localStorage.setItem('lmtoken', Math.random().toString());
-      this.router.navigate(['upload']);
+      this.router.navigate(['admin']);
   }
 }

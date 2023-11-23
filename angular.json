@@ -17,7 +17,8 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "src/pollyfill-aws.ts"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -25,9 +26,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "src/styles.css",
+              "./node_modules/ngx-spinner/animations/ball-scale-ripple-multiple.css",
+              "./node_modules/ngx-spinner/animations/ball-clip-rotate-multiple.css"
+              
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -45,6 +54,27 @@
               ],
               "outputHashing": "all"
             },
+            "production-mervue": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "900kb",
+                  "maximumError": "2mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment-mervue.ts"
+                }
+              ]
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -52,6 +82,20 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "mervue": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment-mervue.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -64,6 +108,9 @@
             },
             "development": {
               "browserTarget": "last-man-2023:build:development"
+            },
+            "mervue": {
+              "browserTarget": "last-man-2023:build:mervue"
             }
           },
           "defaultConfiguration": "development"

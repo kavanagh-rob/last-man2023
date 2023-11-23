@@ -30,15 +30,7 @@ export class StatsComponent implements OnInit {
 
   ngOnInit(): void {
     this.spinner.show();
-    // this.eventObservable.subscribe( resp => {
-    //   // this.spinner.hide();
-    //   this.eventinfo = resp.data;
-    //   const currentWeek = this.eventinfo['statsWeek'];
-    //   this.currentWeekStats =  this.eventinfo.stats[currentWeek];
-    //   this.selectionList = this.currentWeekStats['selections'];
-    // });
-
-   this.eventObservable.subscribe( resp => {
+    this.eventObservable.subscribe( resp => {
         this.eventinfo = resp.data;
         this.dataService.getPlayers().then(resp => {
           this.playersList = resp.Items;
@@ -59,8 +51,8 @@ export class StatsComponent implements OnInit {
     var statsWeek = 'week'+this.eventinfo.statsWeek;
     for(const teamName of this.eventinfo.teamList) {   
       var selection = { 'team': teamName };  
-
-      const count = this.playersList.filter(player => player[statsWeek].trim() === teamName).length;
+    
+      const count = this.playersList.filter(player => player[statsWeek] && player[statsWeek].trim() === teamName).length;
       this.playerCountForWeek = this.playerCountForWeek + count;
       selection['count'] = count;
       selection['color'] = this.getResultColor(teamName);

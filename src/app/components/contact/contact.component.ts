@@ -18,7 +18,6 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(): any{
-    console.log(this.userInfo);
     this.dataService.postUserForm(this.userInfo).then(resp => {
       this.userInfo = {name: '', phone: '', email: '', comment: ''};
       if (confirm('Enquiry Submitted!')){

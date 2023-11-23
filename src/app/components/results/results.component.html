@@ -1,1 +1,34 @@
-<p>results works!</p>
+
+<h3>Update Results for Gameweek {{gameweekId}}</h3>
+<br/>
+<form [formGroup]="resultsForm" class="resultsForm">
+    <div class="row">
+        <div *ngFor="let team of eventInfo.teamList; let i = index;" class="form-group col-md-4" >
+            <mat-form-field [style.width.px]="256">
+                <mat-label><span>{{team}}</span></mat-label>
+                <!-- <mat-select formControlName="team{{i+1}}"  [ngClass]="getClass(i+1)">  -->
+                <mat-select formControlName="{{team}}"  [ngClass]="getClass(team)"> 
+                    <mat-option value="win"> Win </mat-option> 
+                    <mat-option value="lose"> Lose </mat-option> 
+                    <mat-option value="draw">Draw</mat-option> 
+                    <mat-option value="">No Result</mat-option> 
+                  </mat-select> 
+            </mat-form-field>
+        </div>
+    </div>
+    <div [hidden]="!showError" class="text-danger">
+        <br>
+        <h3>Error Updating results</h3>
+    </div>   
+    
+    <div [hidden]="!showSuccess" class="text-success">
+        <br>
+        <h3>Results Updated Successfully</h3>
+    </div>   
+    
+    <div class="buttonbar">
+        <button mat-raised-button color="primary" (click)="submit()">Submit results</button>
+    </div>
+  </form>
+
+

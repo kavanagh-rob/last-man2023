@@ -1,0 +1,27 @@
+.responsive-image {
+    width:70px;
+}
+
+.activeLink {
+    color: maroon;
+    font-weight: 700;
+}
+
+.inactiveLink {
+    color: darkblue;
+    font-weight: 700;
+}
+
+.toolbar{
+    background-color: green !important;
+}
+
+mat-tab-nav-panel{
+    width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .titleprefix{
+        display: none;
+    }
+}

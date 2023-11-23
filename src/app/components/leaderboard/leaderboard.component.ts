@@ -100,7 +100,12 @@ export class LeaderboardComponent implements OnInit, AfterViewChecked {
 
 
   getTeamLogo(playerInfo, weekIndex): any{
-    return this.resourceService.getTeamLogoFromName(this.getPlayerPick(playerInfo, weekIndex));
+    const logo = this.resourceService.getTeamLogoFromName(this.getPlayerPick(playerInfo, weekIndex));
+    return logo ? logo : 'assets/unknown.png';
+  }
+
+  isWeekLogoVisible(playerInfo, weekIndex){
+    return playerInfo['exit-week'] && !this.getPlayerPick(playerInfo, weekIndex);
   }
 
   getRemainingPlayers(): any{

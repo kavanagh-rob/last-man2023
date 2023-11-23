@@ -1,0 +1,9 @@
+.activeLink {
+    color: maroon;
+    font-weight: 700;
+}
+
+.inactiveLink {
+    color: darkblue;
+    font-weight: 700;
+}

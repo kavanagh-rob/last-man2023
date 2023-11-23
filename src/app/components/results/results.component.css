@@ -1,0 +1,11 @@
+.lose{
+    background-color: crimson;
+}
+
+.draw{
+    background-color: orange;
+}
+
+.win{
+    background-color: limegreen;
+}
